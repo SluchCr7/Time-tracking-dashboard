@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+*{
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+--Blue: hsl(246, 80%, 60%);
+--Light-red-work: hsl(15, 100%, 70%);
+--Soft-blue-play: hsl(195, 74%, 62%);
+--Light-red-study: hsl(348, 100%, 68%);
+--Lime-green-exercise: hsl(145, 58%, 55%);
+--Violet-social: hsl(264, 64%, 52%);
+--Soft-orange-self-care: hsl(43, 84%, 65%);
+--Very-dark-blue: hsl(226, 43%, 10%);
+--Dark-blue: hsl(235, 46%, 20%);
+--Desaturated-blue: hsl(235, 45%, 61%);
+--Pale-Blue: hsl(236, 100%, 87%);
+}
+body{
+    font-family: "Rubik", sans-serif;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--Very-dark-blue);
+}
+@mixin display($dir , $pos , $num){
+    display: flex;
+    flex-direction: $dir;
+    align-items: $pos;
+    gap: $num;
+}
+.program{
+    @include display(row,center,40px);
+    width: 100%;
+    padding: 20px 15vw;
+    .peroson_card{
+        width : 350px;
+        background-color: var(--Dark-blue);
+        border-radius: 10px;
+        height: 520px;
+        .top_card{
+            padding: 18px;
+            width: 100%;
+            height: fit-content;
+            border-radius: 10px;
+            background-color: var(--Blue);
+            @include display(column,start,10px);
+            img{
+                width: 90px;
+                border-radius: 50%;
+                border: 2px solid white;
+                margin-right: 10px;
+            }
+            .text{
+                margin-top: 20px;
+                color: white;
+                @include display(column,start,10px);
+                .name_report{
+                    font-weight: 300;
+                    font-size: 14px;
+                }
+                .name{
+                    font-weight: 700;
+                    font-size: 40px;
+                }
+            }
+        }
+        .bottom_card{
+            width: 100%;
+            height: fit-content;
+            padding: 20px 25px;
+            border-radius: 0 0 10px 10px;
+            background-color: var(--Dark-blue);
+            box-shadow: 0px 0px 10px var(--Dark-blue);
+            @include display(column,start,30px);
+            ul{
+                @include display(column,start,30px);
+                list-style: none;
+                li{
+                    color: white;
+                    color: var(--Desaturated-blue);
+                    font-weight: 700;
+                    font-size: 18px;
+                    &:hover{
+                        color: white;
+                    }
+                }
+                .active{
+                    color: white;
+                }
+            }
+        }
+    }
+    .cards{
+        width: 100%;
+        height: -moz-fit-content;
+        height: fit-content;
+        margin-left: 20px;
+        .card{
+            @include display(column,start,0);
+            width: 300px;
+            height: 250px;
+            background-color: var(--Dark-blue);
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px var(--Dark-blue);
+            color: white;
+            .card_top{
+                width: 100%;
+                height: 50px;
+                border-radius: 10px 10px 0 0;
+            }
+            .yellow{
+                background-color: var(--Soft-orange-self-care);
+            }
+            .purple{
+                background-color: var(--Violet-social);
+            }
+            .green{
+                background-color: var(--Lime-green-exercise);
+            }
+            .red{
+                background-color: var(--Light-red-study);
+            }
+            .wBlue{
+                background-color: var(--Soft-blue-play);
+            }
+            .orange{
+                background-color: var(--Light-red-work);
+            }
+            .card_bottom{
+                width: 100%;
+                border-radius: 0 0 10px 10px;
+                .text{
+                    padding: 20px 25px;
+                    height: 200px;
+                    border-radius: 40px 40px 0 0;
+                    background-color: var(--Blue);
+                    @include display(column ,start,0px );
+                    .title_report{
+                        @include display(row, center , 0);
+                        justify-content:space-between;
+                        width: 100%;
+                        margin-bottom: 20px;
+                        .title{
+                            font-weight: 700;
+                        }
+                    }
+                    .txt_details{
+                        @include display(column, start , 0px);
+                        .time{
+                            font-size: 3.2rem;
+                            font-weight: 700;
+                        }
+                        .last{
+                            font-size: .9rem;
+                            font-weight: 400;
+                            color: var(--Pale-Blue);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+
+@media (max-width : 768px) {
+    .program{
+        flex-direction: column;
+        height: 320px;
+        padding:20px 1rem;
+        .peroson_card{
+            width: 100%;
+            .top_card{
+                flex-direction: row;
+                align-items: center;
+                .text{
+                    gap: 0;
+                    .name{
+                        font-size: 25px;
+                    }
+                }
+            }
+            .bottom_card{
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                ul{
+                    flex-direction: row;
+                    align-items: center;
+                }
+            }
+        }
+        .cards{
+            margin-left: 0;
+            .card{
+                width: 100%;
+                .card_bottom{
+                    .text{
+                        .txt_details{
+                            @include display(row, center , 0px);
+                            justify-content: space-between;
+                            width: 100%;
+                            .last{
+                                font-size: 1rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

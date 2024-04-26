@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Time tracking dashboard</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="Images/app-development.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="program">
+    <div class="peroson_card" id="peroson_card">
+      <div class="top_card">
+        <img src="images/image-jeremy.png" alt="">
+        <div class="text">
+          <span class="name_report">report for</span>
+          <span class="name">Jeremy Robson</span>
+        </div>
+      </div>
+      <div class="bottom_card">
+        <ul>
+          <li>
+            <span class="time" id="daily">Daily</span>
+            <!-- <img src="images/icon-ellipsis.svg" alt=""> -->
+          </li>
+          <li>
+            <span class="time active" id="weekly">Weekly</span>
+            <!-- <img src="images/icon-ellipsis.svg" alt=""> -->
+          </li>
+          <li>
+            <span class="time" id="monthly">Monthly</span>
+            <!-- <img src="images/icon-ellipsis.svg" alt=""> -->
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="cards grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-3" id="cards">
+    </div>
+  <script src="index.js"></script>
+</body>
+</html>
